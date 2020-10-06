@@ -1,6 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MQTTester.Views.SubscriberView">
     <ContentPage.Content>
-        <StackLayout/>
+                <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.4*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            <Entry Placeholder="url do broker"/>
+            <Entry Placeholder="porta" Grid.Column="1"/>
+            <Button Text="Connect" Grid.Column="2"/>
+            </Grid>
+
+             <Entry Placeholder="Topico" Grid.Row="1" />
+            <Button Text="Subs" Grid.Row="1" Grid.Column="1"/>
+            <Label Text="Mensagens:" Grid.Row="2"/>
+            <Editor IsReadOnly="True" Grid.Row="3" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
