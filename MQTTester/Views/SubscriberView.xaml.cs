@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using MQTTester.ViewModels;
 using Xamarin.Forms;
 
 namespace MQTTester.Views
@@ -10,6 +10,7 @@ namespace MQTTester.Views
         public SubscriberView()
         {
             InitializeComponent();
+            BindingContext = new SubscriberViewModel();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MQTTester.Views.SubscriberView">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MQTTester.Views.SubscriberView"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True">
     <ContentPage.Content>
                 <Grid>
             <Grid.RowDefinitions>
@@ -20,11 +22,11 @@
                 </Grid.ColumnDefinitions>
             <Entry Placeholder="url do broker"/>
             <Entry Placeholder="porta" Grid.Column="1"/>
-            <Button Text="Connect" Grid.Column="2"/>
+            <Button Text="Connect" Grid.Column="2" Command="{Binding ConnectToBrokerCommand}"/>
             </Grid>
 
              <Entry Placeholder="Topico" Grid.Row="1" />
-            <Button Text="Subs" Grid.Row="1" Grid.Column="1"/>
+            <Button Text="Subs" IsVisible="{Binding ConnectedToBroker}" Grid.Row="1" Grid.Column="1"/>
             <Label Text="Mensagens:" Grid.Row="2"/>
             <Editor IsReadOnly="True" Grid.Row="3" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" />
         </Grid>

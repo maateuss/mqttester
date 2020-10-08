@@ -3,17 +3,28 @@
        xmlns:views="clr-namespace:MQTTester.Views"
        x:Class="MQTTester.AppShell"
        Shell.NavBarIsVisible="False">
-    <TabBar>
-        <Tab Title="Subscriber">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ContentPage">
+                <Setter Property="Padding">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,20,0,0"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+    <TabBar >
             <ShellContent Route="sub"
                           Title="Subscriber"
+                          Icon="subscribe.png"
                           ContentTemplate="{DataTemplate views:SubscriberView}"/>
-        </Tab>
-        <Tab Title="Publisher">
             <ShellContent Route="pub"
                           Title="Publisher"
+                          Icon="publish.png"
                           ContentTemplate="{DataTemplate views:PublisherView}"/>
                 
-        </Tab>
     </TabBar>
 </Shell>

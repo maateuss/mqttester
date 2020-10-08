@@ -133,4 +133,8 @@
       <Name>MQTTester</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\publish.png" />
+    <BundleResource Include="Resources\subscribe.png" />
+  </ItemGroup>
 </Project>

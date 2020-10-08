@@ -5,6 +5,7 @@ namespace MQTTester.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public bool IsBusy { get; set; }
         public BaseViewModel()
         {
         }
